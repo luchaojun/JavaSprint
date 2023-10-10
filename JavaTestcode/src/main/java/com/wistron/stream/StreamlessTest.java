@@ -2,6 +2,7 @@ package com.wistron.stream;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -34,8 +35,18 @@ public class StreamlessTest {
 //        System.out.println(list1);
 //        System.out.println(listNew);
 
-        Stream<String> stream = Stream.of("hello", "world");
-        stream.peek(System.out::println).collect(Collectors.toList());
+        //peek方法的使用
+//        Stream<String> stream = Stream.of("hello", "world");
+//        stream.peek(System.out::println).collect(Collectors.toList());
+
+        //forEachOrdered方法的使用
+//        Stream.of("AAA,","BBB,","CCC,","DDD,").parallel().forEach(System.out::print);
+//        System.out.println("\n______________________________________________");
+//        Stream.of("AAA,","BBB,","CCC,","DDD").parallel().forEachOrdered(System.out::print);
+//        System.out.println("\n______________________________________________");
+//        Stream.of("DDD,","AAA,","BBB,","CCC").parallel().forEachOrdered(System.out::print);
+
+
     }
 }
 class People{
