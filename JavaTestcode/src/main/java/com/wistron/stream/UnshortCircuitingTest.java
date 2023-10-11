@@ -28,6 +28,10 @@ public class UnshortCircuitingTest {
 //        }).get();
 //        System.out.println(i);
 
-
+        List<Integer> list = Arrays.asList(30, 20, 10);
+        Integer i = list.stream().reduce(100, (x, y) -> {
+            return x + y;
+        });
+        System.out.println(i);
     }
 }
