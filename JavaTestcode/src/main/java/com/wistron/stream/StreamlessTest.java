@@ -39,21 +39,14 @@ public class StreamlessTest {
 //        Stream<String> stream = Stream.of("hello", "world");
 //        stream.peek(System.out::println).collect(Collectors.toList());
 
-        //forEachOrdered方法的使用
-//        Stream.of("AAA,","BBB,","CCC,","DDD,").parallel().forEach(System.out::print);
-//        System.out.println("\n______________________________________________");
-//        Stream.of("AAA,","BBB,","CCC,","DDD").parallel().forEachOrdered(System.out::print);
-//        System.out.println("\n______________________________________________");
-//        Stream.of("DDD,","AAA,","BBB,","CCC").parallel().forEachOrdered(System.out::print);
-
-
-    }
+   }
 }
 class People{
     private String name;
     private int age;
 
     public People(String name, int age) {
+        System.out.println("People的构造方法被调用");
         this.name = name;
         this.age = age;
     }
