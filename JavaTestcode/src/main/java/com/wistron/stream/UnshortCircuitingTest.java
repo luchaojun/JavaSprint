@@ -1,6 +1,7 @@
 package com.wistron.stream;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,10 +29,32 @@ public class UnshortCircuitingTest {
 //        }).get();
 //        System.out.println(i);
 
-        List<Integer> list = Arrays.asList(30, 20, 10);
-        Integer i = list.stream().reduce(100, (x, y) -> {
-            return x + y;
-        });
-        System.out.println(i);
+//        List<Integer> list = Arrays.asList(30, 20, 10);
+//        Integer i = list.stream().reduce(100, (x, y) -> {
+//            System.out.println("x="+x+",y="+y);
+//            return x + y;
+//        });
+//        System.out.println(i);
+
+        //collect方法的使用
+//        List<Integer> list = Arrays.asList(1, 2, 3);
+//        list.stream().collect(()->{
+//            System.out.println("创建一个容器");
+//            return new ArrayList<Integer>();
+//        }, (x, y)->{
+//            System.out.println("累加器");
+//            x.forEach(item -> System.out.println("x="+x));
+//            System.out.println("y="+y);
+//            x.add(y);
+//        }, (x, y)->{
+//
+//        }).forEach(item-> System.out.println("最后结果="+item));
+
+//        List<Integer> list = Arrays.asList(10, 9, 13);
+//        list.stream().max(Integer::compare).ifPresent(System.out::println);
+
+//        List<Integer> list = Arrays.asList(10, 9, 13);
+//        long count = list.stream().count();
+//        System.out.println(count);
     }
 }
