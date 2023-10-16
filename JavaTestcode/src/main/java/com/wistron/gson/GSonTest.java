@@ -1,9 +1,6 @@
 package com.wistron.gson;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 
 public class GSonTest {
     public static void main(String[] args) {
@@ -72,5 +69,17 @@ public class GSonTest {
 //            String name = datum.getAsString();
 //            System.out.println(name);
 //        }
+
+        //Json对象与字符串的转换
+//        JsonObject info = new JsonObject();
+//        info.addProperty("name", "张三");
+//        info.addProperty("age", "18");
+//        info.addProperty("地理", 70);
+//        info.addProperty("英语", 60);
+//        String str = info.toString();
+//        JsonObject jo = JsonParser.parseString(str).getAsJsonObject();
+//        System.out.println(jo.get("name").getAsString());
+
+
     }
 }
