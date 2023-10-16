@@ -4,3 +4,4 @@
 4. circuit [ˈsɜːrkɪt] 電路 --> short circuit/unshort-circuit (摘自Java8 Stream學習 短路非短路操作) 
 5. parallel [ˈpærəlel] 并行的 --> parallelStream() (摘自Java8 Stream學習 并行) 
 6. predicate [ˈpredɪkət] 斷言 --> 函數式接口 (摘自Java8 Stream學習 Predicate的函數式接口)
+7. infinite [ˈɪnfɪnət] 無限的 --> an infinite sequential (摘自Java8 Stream學習 Stream.genterate()方法使用)
