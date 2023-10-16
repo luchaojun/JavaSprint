@@ -1,0 +1,76 @@
+package com.wistron.gson;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+public class GSonTest {
+    public static void main(String[] args) {
+        //JSon对象的创建
+//        JsonObject info = new JsonObject();
+//        info.addProperty("name", "张三");
+//        info.addProperty("age", "18");
+//        info.addProperty("地理", 70);
+//        info.addProperty("英语", 60);
+//        System.out.println(info);
+
+        //Json数组的创建
+//        JsonObject info1 = new JsonObject();
+//        info1.addProperty("name", "张三");
+//        info1.addProperty("age", "18");
+//        JsonObject info2 = new JsonObject();
+//        info2.addProperty("name", "李四");
+//        info2.addProperty("age", "19");
+//        JsonArray array = new JsonArray();
+//        array.add(info1);
+//        array.add(info2);
+//        System.out.println(array);
+
+        //Json对象的取值
+//        JsonArray array = new JsonArray();
+//        array.add("1班");
+//        array.add("2班");
+//        array.add("3班");
+//        JsonObject school = new JsonObject();
+//        school.addProperty("schoolName", "第一中学");
+//        school.addProperty("teacher", "刘梅");
+//        JsonObject info = new JsonObject();
+//        info.addProperty("name", "张三");
+//        info.addProperty("age", 18);
+//        info.add("gradle",array);
+//        info.add("schoolInfo",school);
+//        //获取单个属性
+//        String name = info.get("name").getAsString();
+//        System.out.println("name="+name);
+//        //获取JsonArray
+//        JsonArray gradle = info.getAsJsonArray("gradle");
+//        System.out.println(gradle);
+//        //获取JsonObject
+//        JsonObject schoolInfo = info.getAsJsonObject("schoolInfo");
+//        System.out.println(schoolInfo);
+
+        //遍历Json数据
+//        JsonObject info1 = new JsonObject();
+//        info1.addProperty("name", "张三");
+//        info1.addProperty("age", 18);
+//        JsonObject info2 = new JsonObject();
+//        info2.addProperty("name", "李四");
+//        info2.addProperty("age", 19);
+//        JsonArray array = new JsonArray();
+//        array.add(info1);
+//        array.add(info2);
+//        for (JsonElement j : array){
+//            JsonObject jobject = (JsonObject) j;
+//            System.out.println(jobject.get("name").getAsString());
+//        }
+//        JsonArray array = new JsonArray();
+//        array.add("张三");
+//        array.add("李四");
+//        array.add("王五");
+//        for (JsonElement datum : array) {
+//            String name = datum.getAsString();
+//            System.out.println(name);
+//        }
+    }
+}
