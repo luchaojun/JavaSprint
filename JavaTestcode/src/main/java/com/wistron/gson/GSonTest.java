@@ -80,6 +80,11 @@ public class GSonTest {
 //        JsonObject jo = JsonParser.parseString(str).getAsJsonObject();
 //        System.out.println(jo.get("name").getAsString());
 
-
+        String str = "[\"张三\",\"李四\",\"王五\"]";
+        //json字符串转json数组
+        JsonArray data = JsonParser.parseString(str).getAsJsonArray();
+        //json数组转json字符串
+        String strData = data.toString();
+        System.out.println(strData);
     }
 }
