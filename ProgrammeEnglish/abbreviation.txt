@@ -1,1 +1,2 @@
 LTS - Long Term Support
+JSON - JavaScript Object Notation 是一种轻量级的数据交换格式。
