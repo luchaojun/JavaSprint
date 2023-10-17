@@ -4,6 +4,7 @@ import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
+import java.util.Map;
 
 public class GSonTest {
     public static void main(String[] args) {
@@ -97,8 +98,66 @@ public class GSonTest {
 //        System.out.println(strArray[1]);
 
         //json字符串数组转List
-        String str = "[\"张三\",\"李四\",\"王五\"]";
-        TypeToken<List<String>> type = new TypeToken<List<String>>(){};
-//        System.out.println(list);
+//        String str = "[\"张三\",\"李四\",\"王五\"]";
+//        TypeToken<List<String>> type = new TypeToken<List<String>>(){};
+//        Gson gson = new Gson();
+//        List<String> strs = gson.fromJson(str, type);
+//        System.out.println(strs);
+
+        //json字符串与java对象的转换
+//        Student student = new Student(1, "chaojun");
+//        Gson gson = new Gson();
+//        String stuJson = gson.toJson(student);
+//        System.out.println(stuJson);
+//        Student student1 = gson.fromJson(stuJson, Student.class);
+//        System.out.println(student1);
+
+        // json字符串与Map转换
+//        String str="{\n" +
+//                "\"gradle\":\"高一\",\n" +
+//                "\"number\":\"2\",\n" +
+//                "\"people\":[{\"name\":\"张三\",\"age\":\"15\",\"phone\":\"123456\"},\n" +
+//                "         {\"name\":\"李四\",\"age\":\"16\",\"phone\":\"78945\"}]\n" +
+//                "}";
+//        Gson gson = new Gson();
+//        TypeToken<Map<String, Object>> mapType = new TypeToken<Map<String, Object>>(){};
+//        Map<String, Object> map = gson.fromJson(str, mapType);
+//        System.out.println(map.get("gradle").toString());
+//        System.out.println(map.get("number").toString());
+//        System.out.println(map.get("people").toString());
+    }
+}
+
+class Student{
+    private int number;
+    private String name;
+
+    public Student(int number, String name) {
+        this.number = number;
+        this.name = name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "number=" + number +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
