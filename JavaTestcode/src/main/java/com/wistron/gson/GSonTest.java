@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 public class GSonTest {
     public static void main(String[] args) {
@@ -125,6 +126,79 @@ public class GSonTest {
 //        System.out.println(map.get("gradle").toString());
 //        System.out.println(map.get("number").toString());
 //        System.out.println(map.get("people").toString());
+
+//        Gson gson = new GsonBuilder().serializeNulls().create();
+//        Map<String, String> map = new HashMap<>();
+//        map.put(null, "aa");
+//        map.put("测试1", null);
+//        map.put("测试2", "222");
+//        String json = gson.toJson(map);
+//        //{"null":"aa","测试2":"222","测试1":null}
+//        System.out.println(json);
+
+        //Json转list
+//        String str="{\n" +
+//                "\"gradle\":\"高一\",\n" +
+//                "\"number\":\"2\",\n" +
+//                "\"people\":[{\"name\":\"张三\",\"age\":\"15\",\"phone\":\"123456\"},\n" +
+//                "         {\"name\":\"李四\",\"age\":\"16\",\"phone\":\"78945\"}]\n" +
+//                "}";
+//        //字符串转JSON对象
+//        JsonObject jsonObject =JsonParser.parseString(str).getAsJsonObject();
+//        //获取people数组
+//        //JsonElement people = jsonObject.get("people");
+//        JsonArray people = jsonObject.get("people").getAsJsonArray();
+//        //json数组转List
+//        TypeToken<List<Map<String, String>>> type = new TypeToken<List<Map<String, String>>>(){};
+//        List<Map<String, String>> peopleList = new Gson().fromJson(people, type);
+//        System.out.println(peopleList);
+
+//        String str="[{\"name\":\"张三\",\"age\":\"18\"}, {\"name\":\"李四\",\"age\":\"19\"}]";
+//        //json字符串数组转List
+//        TypeToken<List<Person>> type = new TypeToken<List<Person>>(){};
+//        List<Person> list = new Gson().fromJson(str, type);
+//        System.out.println(list);
+
+        //Json字符串格式化
+        String str = "[{\"isSendPhone\":\"true\",\"id\":\"22258352\",\"phoneMessgge\":\"为避免影响您的正常使用请及时续费，若已续费请忽略此信息。\",\"readsendtime\":\"9\",\"countdown\":\"7\",\"count\":\"5\",\"serviceName\":\"流程助手\",\"startdate\":\"2022-02-09 00:00:00.0\",\"insertTime\":\"2023-02-02 07:00:38.0\",\"enddate\":\"2023-02-08 23:59:59.0\",\"emailMessage\":\"为避免影响您的正常使用请及时续费，若已续费请忽略此信息。\",\"phone\":\"\",\"companyname\":\"xx有限责任公司\",\"serviceId\":\"21\",\"isSendeMail\":\"true\",\"email\":\"\"},{\"isSendPhone\":\"true\",\"eid\":\"7682130\",\"phoneMessgge\":\"为避免影响您的正常使用请及时续费，若已续费请忽略此信息。\",\"readsendtime\":\"9\",\"countdown\":\"15\",\"count\":\"50\",\"serviceName\":\"经理人自助服务\",\"startdate\":\"2022-02-17 00:00:00.0\",\"insertTime\":\"2023-02-02 07:00:38.0\",\"enddate\":\"2023-02-16 23:59:59.0\",\"emailMessage\":\"为避免影响您的正常使用请及时续费，若已续费请忽略此信息。\",\"phone\":\"\",\"companyname\":\"xx科技股份有限公司\",\"serviceId\":\"2\",\"isSendeMail\":\"true\",\"email\":\"\"}]";
+        JsonElement jsonObject = JsonParser.parseString(str);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String formatStr = gson.toJson(jsonObject);
+        System.out.println(formatStr);
+    }
+}
+
+class Person{
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
 
