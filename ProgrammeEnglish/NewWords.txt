@@ -7,3 +7,7 @@
 7. infinite [ˈɪnfɪnət] 無限的 --> an infinite sequential (摘自Java8 Stream學習 Stream.genterate()方法使用)
 8. convenience [kənˈviːniəns] 方便的 --> convenience method (摘自GSON學習 getAsString()方法使用)
 9. corresponding [ˌkɔːrəˈspɑːndɪŋ] 相应的 --> corresponding to (摘自GSON學習 JsonParser parseString()方法的使用)
+10. TypeToken 類型標記 --> Type Token (摘自GSON學習 給 Gson.fromJson()方法的第二個參數使用)
+11. literal [ˈlɪtərəl] 字面意義的 --> a type literal(摘自GSON學習, TypeToken的介紹)
+12. retrieval [rɪˈtriːvl] 檢索 --> retrieval the type information (摘自GSON學習, TypeToken的介紹)
+13. generic type 範型--> 摘自GSON學習, TypeToken的介紹
