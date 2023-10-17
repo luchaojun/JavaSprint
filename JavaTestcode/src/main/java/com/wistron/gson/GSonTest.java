@@ -1,6 +1,9 @@
 package com.wistron.gson;
 
 import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.List;
 
 public class GSonTest {
     public static void main(String[] args) {
@@ -80,11 +83,22 @@ public class GSonTest {
 //        JsonObject jo = JsonParser.parseString(str).getAsJsonObject();
 //        System.out.println(jo.get("name").getAsString());
 
+//        String str = "[\"张三\",\"李四\",\"王五\"]";
+//        //json字符串转json数组
+//        JsonArray data = JsonParser.parseString(str).getAsJsonArray();
+//        //json数组转json字符串
+//        String strData = data.toString();
+//        System.out.println(strData);
+
+        //json字符串数组转数组
+//        String str = "[\"张三\",\"李四\",\"王五\"]";
+//        Gson gson = new Gson();
+//        String[] strArray = gson.fromJson(str, String[].class);
+//        System.out.println(strArray[1]);
+
+        //json字符串数组转List
         String str = "[\"张三\",\"李四\",\"王五\"]";
-        //json字符串转json数组
-        JsonArray data = JsonParser.parseString(str).getAsJsonArray();
-        //json数组转json字符串
-        String strData = data.toString();
-        System.out.println(strData);
+        TypeToken<List<String>> type = new TypeToken<List<String>>(){};
+//        System.out.println(list);
     }
 }
