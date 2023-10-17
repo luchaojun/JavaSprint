@@ -11,3 +11,6 @@
 11. literal [ˈlɪtərəl] 字面意義的 --> a type literal(摘自GSON學習, TypeToken的介紹)
 12. retrieval [rɪˈtriːvl] 檢索 --> retrieval the type information (摘自GSON學習, TypeToken的介紹)
 13. generic type 範型--> 摘自GSON學習, TypeToken的介紹
+14. omits [əˈmɪts] 忽略 --> Gson omits all fields  (摘自GSON學習, GsonBuilder的serializeNulls方法不会忽略null)
+15. serialize [ˈsɪriəlaɪz] 从档案文件中读取该对象或向档案文件中写入该对象 --> serialize null fields  (摘自GSON學習, GsonBuilder的serializeNulls方法)
+16 hence [hens] 因此 --> hence can be called multiple times. (摘自GSON學習, GsonBuilder的create方法)
