@@ -13,4 +13,8 @@
 13. generic type 範型--> 摘自GSON學習, TypeToken的介紹
 14. omits [əˈmɪts] 忽略 --> Gson omits all fields  (摘自GSON學習, GsonBuilder的serializeNulls方法不会忽略null)
 15. serialize [ˈsɪriəlaɪz] 从档案文件中读取该对象或向档案文件中写入该对象 --> serialize null fields  (摘自GSON學習, GsonBuilder的serializeNulls方法)
-16 hence [hens] 因此 --> hence can be called multiple times. (摘自GSON學習, GsonBuilder的create方法)
+16. hence [hens] 因此 --> hence can be called multiple times. (摘自GSON學習, GsonBuilder的create方法)
+17. legal [ˈliːɡl] 法律的 --> it is legal for  (摘自深复制浅复制學習, Cloneable接口)
+18. by convention 依照惯例 -->  (摘自深复制浅复制學習, Cloneable接口)
+19. by virtue of 凭借 --> by virtue of the fact (摘自深复制浅复制學習, Cloneable接口)
+20. merely [ˈmɪrli] 仅仅 --> (摘自深复制浅复制學習, Cloneable接口)
