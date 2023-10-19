@@ -18,3 +18,8 @@
 18. by convention 依照惯例 -->  (摘自深复制浅复制學習, Cloneable接口)
 19. by virtue of 凭借 --> by virtue of the fact (摘自深复制浅复制學習, Cloneable接口)
 20. merely [ˈmɪrli] 仅仅 --> (摘自深复制浅复制學習, Cloneable接口)
+21. allocate [ˈæləkeɪt] 分配 --> Allocates a new byte buffer (摘自NIO Buffer学习， Buffer的allocate方法)
+22. capacity [kəˈpæsəti] 容量 --> Returns this buffer's capacity. (摘自NIO Buffer学习， Buffer的capacity方法)
+23. discarded [discarded] 丢弃 --> it is discarded (摘自NIO Buffer学习， Buffer的flip方法)
+24. flip [flɪp] 改变 --> Flips this buffer (摘自NIO Buffer学习， Buffer的flip方法)
+25. assuming [əˈsuːmɪŋ] 假如 --> assuming that the limit (摘自NIO Buffer学习， Buffer的rewind方法)
