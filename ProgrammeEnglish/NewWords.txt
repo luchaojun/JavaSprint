@@ -23,3 +23,5 @@
 23. discarded [discarded] 丢弃 --> it is discarded (摘自NIO Buffer学习， Buffer的flip方法)
 24. flip [flɪp] 改变 --> Flips this buffer (摘自NIO Buffer学习， Buffer的flip方法)
 25. assuming [əˈsuːmɪŋ] 假如 --> assuming that the limit (摘自NIO Buffer学习， Buffer的rewind方法)
+26. setup [ˈsɛˌtʌp] 安裝 --> public static void setup()  (摘自junit4学习, @BeforeClass注解)
+27. teardown 卸載 --> public static void teardown()  (摘自junit4学习, @AfterClass注解)
