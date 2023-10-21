@@ -8,7 +8,8 @@ import java.nio.LongBuffer;
 
 //Buffer Test
 public class BufferTest {
-    
+
+    //ByteBuffer在allocate，put, flip, get, rewind, clear之后position， limit， capacity值的变化
     @Test
     public void test1() {
         System.out.println("============allocate==========");
@@ -47,6 +48,7 @@ public class BufferTest {
         System.out.println((char)byteBuffer.get());
     }
 
+    //测试get，reset， hasRemaining， remaining， allocateDirect api的使用
     @Test
     public void test2(){
         ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
