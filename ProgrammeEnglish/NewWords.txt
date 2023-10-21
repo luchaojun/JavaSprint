@@ -36,3 +36,4 @@
 36. potentially [pə'tenʃəli 潛在的 --> it is potentially (摘自NIO学习, ByteBuffer put方法)
 37. as if 好像...一樣 --> (摘自NIO学习, ByteBuffer put方法)
 38. intermediate [ˌɪntərˈmiːdiət] 中間的 --> an intermediate location (摘自NIO学习, ByteBuffer put方法)
+39. Write Once，Run any Where --> 一次编写，到处运行 (摘自 CSDN java面試八股文)
