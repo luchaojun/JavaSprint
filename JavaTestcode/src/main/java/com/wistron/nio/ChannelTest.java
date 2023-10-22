@@ -2,10 +2,7 @@ package com.wistron.nio;
 
 import org.junit.Test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
@@ -176,9 +173,22 @@ public class ChannelTest {
         System.out.println("After transferFrom, fosChannel.position="+fosChannel.position()+",fosChannel.size()="+fosChannel.size());
     }
 
-    //分散读取聚集写入
+    //分散(scatter)读取聚集(gathering)写入
     @Test
     public void channelTest8() throws IOException {
-
+        RandomAccessFile raf = new RandomAccessFile("scatter_gathering_file", "rw");
+        FileChannel fileChannel = raf.getChannel();
+        ByteBuffer byteBuffer1 = ByteBuffer.allocate(400);
+        ByteBuffer byteBuffer2 = ByteBuffer.allocate(1024);
+        ByteBuffer[] buffers = {byteBuffer1, byteBuffer2};
+        fileChannel.read(buffers);
+        for(ByteBuffer buffer: buffers){
+            buffer.flip();
+        }
+        RandomAccessFile raf2 = new RandomAccessFile("scatter_gathering_file_copy", "rw");
+        FileChannel fileChannel2 = raf2.getChannel();
+        fileChannel2.write(buffers);
+        fileChannel.close();
+        fileChannel2.close();
     }
 }
