@@ -1,68 +1,53 @@
 package com.wistron.nio;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
+import java.nio.channels.*;
 import java.util.Iterator;
+import java.util.Set;
 
 //NIO选择器代码测试
 public class SelecterServerTest {
-    public static void main(String[] args) {
-        try {
-            //1.获取管道
-            ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-            //2.设置非阻塞模式
-            serverSocketChannel.configureBlocking(false);
-            //3.绑定端口
-            serverSocketChannel.bind(new InetSocketAddress(8888));
-            //4.获取选择器
-            Selector selector = Selector.open();
-            //5.将通道注册到选择器上，并且开始指定监听的接收事件
-            serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
-            System.out.println("while循环之前");
-            //6.轮询已经就绪的事件
-            while (selector.select() > 0) {
-                System.out.println("开启事件处理");
-                //7.获取选择器中所有注册的通道中已准备好的事件
-                Iterator<SelectionKey> it = selector.selectedKeys().iterator();
-                //8.开始遍历事件
-                while (it.hasNext()) {
-                    SelectionKey selectionKey = it.next();
-                    System.out.println("--->" + selectionKey);
-                    //9.判断这个事件具体是啥
-                    if (selectionKey.isAcceptable()) {
-                        System.out.println("selectionKey.isAcceptable");
-                        //10.获取当前接入事件的客户端通道
-                        SocketChannel socketChannel = serverSocketChannel.accept();
-                        System.out.println("selectionKey.isAcceptable(), socketChannel="+socketChannel);
-                        //11.切换成非阻塞模式
-                        socketChannel.configureBlocking(false);
-                        //12.将本客户端注册到选择器
-                        socketChannel.register(selector, SelectionKey.OP_READ);
-                    } else if (selectionKey.isReadable()) {
-                        System.out.println("selectionKey.isReadable");
-                        //13.获取当前选择器上的读
-                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                        System.out.println("selectionKey.isReadable(), socketChannel="+socketChannel);
-                        //14.读取
-                        ByteBuffer buffer = ByteBuffer.allocate(1024);
-                        int len;
-                        while ((len = socketChannel.read(buffer)) > 0) {
-                            buffer.flip();
-                            System.out.println(new String(buffer.array(), 0, len));
-                            //清除之前的数据（覆盖写入）
-                            buffer.clear();
-                        }
-                    }
-                    //15.处理完毕后，移除当前事件
-                    it.remove();
+    public static void main(String[] args) throws IOException {
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        serverSocketChannel.bind(new InetSocketAddress(8989));
+        serverSocketChannel.configureBlocking(false);
+        Selector selector = Selector.open();
+        SelectionKey selectionKey = serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+
+        while(selector.select() > 0){
+            Set<SelectionKey> selectionKeys = selector.selectedKeys();
+            Iterator<SelectionKey> iterator = selectionKeys.iterator();
+            while(iterator.hasNext()){
+                SelectionKey key = iterator.next();
+                if(key.isAcceptable()){
+                    handleAccept(key);
+                }else if(key.isReadable()){
+                    handleReadable(key);
                 }
+                iterator.remove();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+        serverSocketChannel.close();
+    }
+
+    private static void handleReadable(SelectionKey key) throws IOException {
+        System.out.println("handleReadable");
+        SocketChannel socketChannel1 = (SocketChannel) key.channel();
+        socketChannel1.configureBlocking(false);
+        ByteBuffer byteBuffer = ByteBuffer.allocate(100);
+        socketChannel1.read(byteBuffer);
+        System.out.println(new String(byteBuffer.array()));
+    }
+
+    private static void handleAccept(SelectionKey key) throws IOException {
+        ServerSocketChannel serverSocketChannel = (ServerSocketChannel) key.channel();
+        SocketChannel socketChannel = serverSocketChannel.accept();
+        socketChannel.configureBlocking(false);
+        System.out.println("socketChannel="+socketChannel);
+        socketChannel.configureBlocking(false);
+        socketChannel.write(ByteBuffer.wrap("hello client".getBytes()));
+        socketChannel.register(key.selector(), SelectionKey.OP_READ);
     }
 }
