@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Result>
+    <Value>
+        <NO>A1234</NO>
+        <Address>上海</Address>
+    </Value>
+    <Value>
+        <NO>A1235</NO>
+        <Address>江苏</Address>
+    </Value>
+</Result>
