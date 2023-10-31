@@ -42,4 +42,22 @@
 42. takes the place of 替代 --> Iterator takes the place of Enumeration in the Java Collections Framework. (摘自java.util.Iterator)
 43. underlying 根本的 --> remove elements from the underlying collection (摘自java.util.Iterator)
 44. scatter [ˈskætər] 分散 --> (摘自NIO学习, scatter and gathering)
-4. gathering [ˈɡæðərɪŋ] 收集 --> (摘自NIO学习, scatter and gathering)
+45. gathering [ˈɡæðərɪŋ] 收集 --> (摘自NIO学习, scatter and gathering)
+46. trouble shotting [ˈtrʌbl ˈʃuːtɪŋ] 故障排除 --> (摘自Dom解析學習, Tip for trouble shotting)
+47. merely [ˈmɪrli]  僅僅  --> (摘自Dom解析學習, it merely requires)
+48. conceptually [kənˈsɛptʃuəli] 概念上 --> (摘自Dom解析學習, Conceptually, )
+49. access to 訪問--> (摘自Dom解析學習, access to the document's data)
+50. primary 主要的 --> (摘自Dom解析學習, primary access to the document's data)
+
+
+
+
+
+
+
+
+
+
+
+
+

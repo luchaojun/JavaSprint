@@ -1,3 +1,8 @@
 LTS - Long Term Support
 JSON - JavaScript Object Notation 是一种轻量级的数据交换格式。
 NIO  - New IO
+XML  - extensible markup language
+Dom  - Document Object Model
+Sax  - Simple API for XML
+Jdom - Java Document Object Model
+
