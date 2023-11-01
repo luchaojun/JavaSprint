@@ -4,12 +4,15 @@ import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
+import java.util.Stack;
 
 public class XmlParserTest {
     @Test
@@ -24,4 +27,13 @@ public class XmlParserTest {
             System.out.println(document.getElementsByTagName("Address").item(i).getFirstChild().getNodeValue());
         }
     }
+
+    @Test
+    public void testSAXParser(){
+
+    }
+}
+
+class MySaxParserHandler extends DefaultHandler{
+
 }
