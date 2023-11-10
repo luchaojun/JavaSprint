@@ -69,6 +69,5 @@ class MySaxParserHandler extends DefaultHandler{
         System.out.println("localName="+localName);
         System.out.println("qName="+qName);
         System.out.println("===============================================================");
-
     }
 }
