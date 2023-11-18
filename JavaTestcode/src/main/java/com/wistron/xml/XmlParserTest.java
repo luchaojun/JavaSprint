@@ -58,10 +58,10 @@ public class XmlParserTest {
     public void testJDom() throws IOException, JDOMException {
         SAXBuilder sb = new SAXBuilder();
         org.jdom2.Document d = sb.build(new File("for_xml_parser.xml"));
-        Element element = d.getRootElement();
-        List<Element> children = element.getChildren();
-        for(Element e : children){
-            System.out.println(e.getAttribute("t").getValue());
+        org.jdom2.Element element = d.getRootElement();
+        List<org.jdom2.Element> children = element.getChildren();
+        for(org.jdom2.Element e : children){
+            System.out.println(e.getAttribute("id").getValue());
         }
     }
 
