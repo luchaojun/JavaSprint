@@ -89,8 +89,11 @@ public class XmlParserTest {
 //        }
 
         //根据属性值获取对应的Element
-        Element element = (Element) xPath.evaluate("/People/Person[Address[@nation='China']]/Address", document, XPathConstants.NODE);
-        System.out.println(element.getTextContent());
+//        Element element = (Element) xPath.evaluate("/People/Person[Address[@nation='China']]/Address", document, XPathConstants.NODE);
+//        System.out.println(element.getTextContent());
+
+        Element element = (Element) xPath.evaluate("/People/Person/..", document, XPathConstants.NODE);
+        System.out.println(element.getTextContent().length());
     }
 }
 
