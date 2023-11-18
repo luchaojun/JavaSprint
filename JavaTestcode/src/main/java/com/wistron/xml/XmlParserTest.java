@@ -1,5 +1,9 @@
 package com.wistron.xml;
 
+import org.dom4j.DocumentException;
+import org.dom4j.io.SAXReader;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -13,7 +17,10 @@ import org.xml.sax.helpers.XMLReaderFactory;
 import javax.xml.parsers.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Stack;
+import org.jdom2.*;
 
 public class XmlParserTest {
     @Test
@@ -31,14 +38,38 @@ public class XmlParserTest {
 
     @Test
     public void testSAXParser() throws ParserConfigurationException, SAXException, IOException {
-        SAXParserFactory spf = SAXParserFactory.newInstance();
-        SAXParser saxParser = spf.newSAXParser();
-        File file = new File("for_xml_parser.xml");
-        saxParser.parse(file, new MySaxParserHandler());
+//        SAXParserFactory spf = SAXParserFactory.newInstance();
+//        SAXParser saxParser = spf.newSAXParser();
+//        File file = new File("for_xml_parser.xml");
+//        saxParser.parse(file, new MySaxParserHandler());
 
-//        XMLReader xmlReader = XMLReaderFactory.createXMLReader();
-//        xmlReader.setContentHandler(new MySaxParserHandler());
-//        xmlReader.parse(new InputSource("for_xml_parser.xml"));
+        XMLReader xmlReader = XMLReaderFactory.createXMLReader();
+        xmlReader.setContentHandler(new MySaxParserHandler());
+        xmlReader.parse(new InputSource("for_xml_parser.xml"));
+    }
+
+    @Test
+    public void testJDom() throws IOException, JDOMException {
+        SAXBuilder sb = new SAXBuilder();
+        org.jdom2.Document d = sb.build(new File("for_xml_parser.xml"));
+        Element element = d.getRootElement();
+        List<Element> children = element.getChildren();
+        for(Element e : children){
+            System.out.println(e.getAttribute("t").getValue());
+        }
+    }
+
+    @Test
+    public void testDom4j() throws DocumentException {
+        File file = new File("for_xml_parser.xml");
+        SAXReader sr = new SAXReader();
+        org.dom4j.Document document = sr.read(file);
+        org.dom4j.Element rootElement = document.getRootElement();
+        Iterator<org.dom4j.Element> elementIterator = rootElement.elementIterator();
+        while (elementIterator.hasNext()){
+            org.dom4j.Element element = elementIterator.next();
+            System.out.println(element.attribute("t").getValue());
+        }
     }
 }
 

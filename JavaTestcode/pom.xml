@@ -31,5 +31,20 @@
           <version>RELEASE</version>
           <scope>compile</scope>
       </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
+      <dependency>
+          <groupId>org.dom4j</groupId>
+          <artifactId>dom4j</artifactId>
+          <version>2.1.4</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.jdom/jdom2 -->
+      <dependency>
+          <groupId>org.jdom</groupId>
+          <artifactId>jdom2</artifactId>
+          <version>2.0.6.1</version>
+      </dependency>
+
   </dependencies>
 </project>
