@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RESULT>
-    <value t="t1">
-        <NO>1</NO>
-        <NAME>luchaojun</NAME>
-        <ADDR>Shanghai</ADDR>
-    </value>
-    <value t="t2">
-        <NO>2</NO>
-        <NAME>qinchao</NAME>
-        <ADDR>shanxi</ADDR>
-    </value>
-</RESULT>
+<People>
+    <Person id="1">
+        <Name>chaojun</Name>
+        <Address nation="hina">Shanghai</Address>
+        <Sex>male</Sex>
+    </Person>
+    <Person id="2">
+        <Name>qinchao</Name>
+        <Address nation="China">Shanxi</Address>
+        <Sex>female</Sex>
+    </Person>
+</People>

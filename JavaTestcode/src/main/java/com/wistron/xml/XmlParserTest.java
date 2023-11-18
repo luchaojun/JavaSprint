@@ -6,6 +6,8 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 import org.junit.Test;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
@@ -15,6 +17,10 @@ import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import javax.xml.parsers.*;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -70,6 +76,55 @@ public class XmlParserTest {
             org.dom4j.Element element = elementIterator.next();
             System.out.println(element.attribute("t").getValue());
         }
+    }
+
+    //Test Java XPath API
+    @Test
+    public void testXPath() throws ParserConfigurationException, IOException, SAXException, XPathExpressionException {
+        File file = new File("for_xml_parser.xml");
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder db = documentBuilderFactory.newDocumentBuilder();
+        Document document = db.parse(file);
+        XPathFactory xPathFactory = XPathFactory.newInstance();
+        XPath xPath = xPathFactory.newXPath();
+
+
+        //根据表达式, 获取单个Node
+//        Node o1 = (Node)xPath.evaluate("//Name", document, XPathConstants.NODE);
+//        System.out.println(o1.getNodeType());
+//        Element element = (Element) xPath.evaluate("//Name", document, XPathConstants.NODE);
+//        System.out.println(element.getTextContent());
+
+        //根据表达式, 获取Node集合
+//        NodeList nodeList = (NodeList) xPath.evaluate("/People/Person/*", document, XPathConstants.NODESET);
+//        for (int i = 0; i < nodeList.getLength(); i++) {
+//            System.out.println("========"+nodeList.item(i).getNodeName() + " ");
+//        }
+
+        //根据表达式, 筛选出element
+//        Element element = (Element) xPath.evaluate("/People/*[name()='Person2']", document, XPathConstants.NODE);
+//        System.out.println(element.getAttribute("id"));
+
+        //获取包含子节点的元素
+//        NodeList nodeList = (NodeList) xPath.evaluate("/People/*[*]", document, XPathConstants.NODESET);
+//        for(int i=0;i<nodeList.getLength();i++){
+//            String nodeName = nodeList.item(i).getNodeName();
+//            System.out.println(nodeName);
+//        }
+
+        //获取指定层级元素
+//        NodeList nodeList = (NodeList) xPath.evaluate("/*/*/*", document, XPathConstants.NODESET);
+//        for(int i=0;i<nodeList.getLength();i++){
+//            String nodeName = nodeList.item(i).getNodeName();
+//            System.out.println(nodeName);
+//        }
+
+        //根据属性值获取对应的Element
+//        Element element = (Element) xPath.evaluate("/People/Person[Address[@nation='China']]/Address", document, XPathConstants.NODE);
+//        System.out.println(element.getTextContent());
+
+        Element element = (Element) xPath.evaluate("/People/Person/..", document, XPathConstants.NODE);
+        System.out.println(element.getTextContent().length());
     }
 }
 
