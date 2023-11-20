@@ -5,5 +5,5 @@ XML  - extensible markup language
 Dom  - Document Object Model
 Sax  - Simple API for XML
 Jdom - Java Document Object Model
-XPath - XML Path Language，它是一种用来确定XML文档中某部分位置的语言
+World Wide Web Consortium -- 万维网联盟(简称 W3C）
 
