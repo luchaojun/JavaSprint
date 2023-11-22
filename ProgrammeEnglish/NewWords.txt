@@ -50,7 +50,8 @@
 50. primary 主要的 --> (摘自Dom解析學習, primary access to the document's data)
 51. expression 表达式 --> (摘自XPath學習, Evaluate an XPath expression in the specified context and return the result as the specified type.)
 52. meld into 融入 --> (摘自git學習, use commit, but meld into previous commit）
-53. aka --- also known as(也被成为)  (摘自HashMap學習)
+53. aka --- also known as(也被成为)  --> (摘自HashMap學習)
+54. blame [bleɪm] 把...归咎于  --> (摘自git學習, git blame）
 
 
 
