@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE People[
+        <!ELEMENT People (Person+)>
+        <!ELEMENT Person (Name,Address,Sex)>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT Address (#PCDATA)>
+        <!ELEMENT Sex (#PCDATA)>
+        <!ATTLIST Person
+                id CDATA #REQUIRED>
+        ]>
 <People>
     <Person id="1">
-        <Name>chaojun</Name>
-        <Address nation="hina">Shanghai</Address>
+        <Name> chao j un </Name>
+        <Address>Shanghai</Address>
         <Sex>male</Sex>
     </Person>
     <Person id="2">
-        <Name>qinchao</Name>
-        <Address nation="China">Shanxi</Address>
+        <Name>qin cha o</Name>
+        <Address>Shanxi</Address>
         <Sex>female</Sex>
     </Person>
 </People>

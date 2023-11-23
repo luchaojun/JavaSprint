@@ -33,9 +33,18 @@ public class XmlParserTest {
     public void testDomParser() throws ParserConfigurationException, IOException, SAXException {
         File file = new File("for_xml_parser.xml");
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        documentBuilderFactory.setIgnoringElementContentWhitespace(true);
+
+        //需要配合DTD使用
+        documentBuilderFactory.setValidating(true);
+        documentBuilderFactory.setIgnoringElementContentWhitespace(false);
+
         DocumentBuilder db = documentBuilderFactory.newDocumentBuilder();
         Document document = db.parse(file);
+        Element documentElement = document.getDocumentElement();
+        NodeList childNodes = documentElement.getChildNodes();
+        for(int i=0;i<childNodes.getLength();i++){
+            System.out.println(childNodes.item(i).getNodeName());
+        }
 
         //获取根元素, 然后获取根元素的子nodes
 //        Element documentElement = document.getDocumentElement();
@@ -45,10 +54,10 @@ public class XmlParserTest {
 //        }
 //        System.out.println(documentElement.getNodeName());
 
-        NodeList nodeList = document.getElementsByTagName("Person");
-        for (int i=0;i<nodeList.getLength();i++){
-            System.out.println(document.getElementsByTagName("Name").item(i).getTextContent());
-        }
+//        NodeList nodeList = document.getElementsByTagName("Person");
+//        for (int i=0;i<nodeList.getLength();i++){
+//            System.out.println(document.getElementsByTagName("Name").item(i).getTextContent());
+//        }
     }
 
     @Test
