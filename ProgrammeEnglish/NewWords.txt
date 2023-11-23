@@ -52,7 +52,11 @@
 52. meld into 融入 --> (摘自git學習, use commit, but meld into previous commit）
 53. aka --- also known as(也被成为)  --> (摘自HashMap學習)
 54. blame [bleɪm] 把...归咎于  --> (摘自git學習, git blame）
-
+55. nested [ˈnestɪd] 嵌套的--> (摘自JDom學習, If this target element has no nested elements, an empty List is returned.)
+56. sequential [sɪˈkwenʃl] 顺序的 --> (摘自JDom學習, Sequential traversal through the List is best done )
+57. traversal ['trævɜːsəl] 遍历 --> (摘自JDom學習, Sequential traversal through the List is best done )
+58. underly [ˈʌndəli] 低等的 --> (摘自JDom學習, the underlying implement of List.size() may not be the most efficient)
+59. recursion [rɪˈkɜːrʒn] 递归--> (摘自JDom學習,No recursion is performed)
 
 
 
