@@ -2,13 +2,12 @@ package com.wistron.xml;
 
 import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
+import org.jdom2.Document;
+import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 import org.junit.Test;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.Attr;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -39,12 +38,10 @@ public class XmlParserTest {
         documentBuilderFactory.setIgnoringElementContentWhitespace(false);
 
         DocumentBuilder db = documentBuilderFactory.newDocumentBuilder();
-        Document document = db.parse(file);
-        Element documentElement = document.getDocumentElement();
-        NodeList childNodes = documentElement.getChildNodes();
-        for(int i=0;i<childNodes.getLength();i++){
-            System.out.println(childNodes.item(i).getNodeName());
-        }
+        org.w3c.dom.Document document = db.parse(file);
+
+
+        org.w3c.dom.Element documentElement = document.getDocumentElement();
 
         //获取根元素, 然后获取根元素的子nodes
 //        Element documentElement = document.getDocumentElement();
@@ -58,6 +55,13 @@ public class XmlParserTest {
 //        for (int i=0;i<nodeList.getLength();i++){
 //            System.out.println(document.getElementsByTagName("Name").item(i).getTextContent());
 //        }
+
+        //往XML文件当中增加一个元素
+        org.w3c.dom.Element personElement = document.createElement("Person");
+        Attr personAttrId = document.createAttribute("id");
+        personElement.setAttribute("id", "3");
+
+
     }
 
     @Test
