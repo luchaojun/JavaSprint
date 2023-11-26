@@ -46,8 +46,7 @@ public class XmlParserTest {
 
         DocumentBuilder db = documentBuilderFactory.newDocumentBuilder();
         org.w3c.dom.Document document = db.parse(file);
-
-
+        //获取根元素
         org.w3c.dom.Element documentElement = document.getDocumentElement();
 
         //修改对应元素的属性值
@@ -83,14 +82,20 @@ public class XmlParserTest {
 //        documentElement.appendChild(personElement);
 
         //通过XPath去删除一个node
-        XPathFactory xPathFactory = XPathFactory.newInstance();
-        XPath xPath = xPathFactory.newXPath();
-        org.w3c.dom.Element personElement = (org.w3c.dom.Element) xPath.evaluate("/People/Person[@id='1']", document, XPathConstants.NODE);
-        documentElement.removeChild(personElement);
+//        XPathFactory xPathFactory = XPathFactory.newInstance();
+//        XPath xPath = xPathFactory.newXPath();
+//        org.w3c.dom.Element personElement = (org.w3c.dom.Element) xPath.evaluate("/People/Person[@id='1']", document, XPathConstants.NODE);
+//        documentElement.removeChild(personElement);
         //保存修改后的数据
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        transformer.transform(new DOMSource(document), new StreamResult( new File("test.xml")));
+//        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+//        Transformer transformer = transformerFactory.newTransformer();
+//        transformer.transform(new DOMSource(document), new StreamResult( new File("test.xml")));
+
+        //测试 getTextContent 和 getNodeValue的差别
+        NodeList addressList = document.getElementsByTagName("Address");
+        org.w3c.dom.Element addressElement = (org.w3c.dom.Element) addressList.item(0);
+        System.out.println(addressElement.getTextContent());
+        System.out.println(addressElement.getFirstChild().getNodeValue());   //Address后面的值也是Node所以通过getNodeValue获取值先要得到Node对象
     }
 
     @Test
