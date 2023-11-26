@@ -95,7 +95,7 @@ public class XmlParserTest {
         NodeList addressList = document.getElementsByTagName("Address");
         org.w3c.dom.Element addressElement = (org.w3c.dom.Element) addressList.item(0);
         System.out.println(addressElement.getTextContent());
-        System.out.println(addressElement.getFirstChild().getNodeValue());   //Address后面的值也是Node所以通过getNodeValue获取值先要得到Node对象
+        System.out.println(addressElement.getFirstChild().getNodeValue());   //Address后面的值也是Node所以通过getNodeValue获取值先要得到Node对象 ""
     }
 
     @Test
