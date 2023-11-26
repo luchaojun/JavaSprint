@@ -57,7 +57,8 @@
 57. traversal ['trævɜːsəl] 遍历 --> (摘自JDom學習, Sequential traversal through the List is best done )
 58. underly [ˈʌndəli] 低等的 --> (摘自JDom學習, the underlying implement of List.size() may not be the most efficient)
 59. recursion [rɪˈkɜːrʒn] 递归--> (摘自JDom學習,No recursion is performed)
-
+60. transform [trænsˈfɔːrm] 使改变 --> (摘自Dom學習, TransformerFactory Class)
+61. act as 起...作用  -->  (摘自Dom學習, Acts as a holder for a transformation Source tree)
 
 
 
