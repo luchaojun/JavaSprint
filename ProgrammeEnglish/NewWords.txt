@@ -59,7 +59,8 @@
 59. recursion [rɪˈkɜːrʒn] 递归--> (摘自JDom學習,No recursion is performed)
 60. transform [trænsˈfɔːrm] 使改变 --> (摘自Dom學習, TransformerFactory Class)
 61. act as 起...作用  -->  (摘自Dom學習, Acts as a holder for a transformation Source tree)
-
+62. recursively [rɪ'kəsɪvlɪ] 递归地 --> (摘自Java Properties學習, recursively, are then checked)
+63. distinct [dɪˈstɪŋkt] 不同的 -->  (摘自Java Properties學習， including distinct keys in the default property list)
 
 
 
