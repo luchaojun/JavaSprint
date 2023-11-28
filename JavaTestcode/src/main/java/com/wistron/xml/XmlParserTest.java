@@ -127,10 +127,28 @@ public class XmlParserTest {
         SAXReader sr = new SAXReader();
         org.dom4j.Document document = sr.read(file);
         org.dom4j.Element rootElement = document.getRootElement();
-        Iterator<org.dom4j.Element> elementIterator = rootElement.elementIterator();
-        while (elementIterator.hasNext()){
-            org.dom4j.Element element = elementIterator.next();
-            System.out.println(element.attribute("t").getValue());
+        
+        /**
+         *@Author：Chaojun_Lu    *@Date：2023/11/28 23:20
+         *@Function： 迭代Person下的所有元素
+        */
+//        Iterator<org.dom4j.Element> elementIterator = rootElement.elementIterator();
+//        while (elementIterator.hasNext()){
+//            org.dom4j.Element element = elementIterator.next();
+//            Iterator<org.dom4j.Element> elementIterator2 = element.elementIterator();
+//            while (elementIterator2.hasNext()){
+//                System.out.println(elementIterator2.next().getStringValue());
+//            }
+//        }
+
+        /**
+         *@Author：Chaojun_Lu    *@Date：2023/11/28 23:27
+         *@Function： 指定子元素的名字进行迭代
+        */
+        Iterator<org.dom4j.Element> elementIterator3 = rootElement.elementIterator("Person2");
+        while (elementIterator3.hasNext()){
+            org.dom4j.Element element = elementIterator3.next();
+            System.out.println(element.getStringValue());
         }
     }
 
