@@ -8,4 +8,11 @@ Jdom - Java Document Object Model
 www  -  World Wide Web Consortium -- 万维网联盟(简称 W3C）
 DTD  - Document Type Definition 文檔類型定義
 Dom4j - Dom for java
+DB - DataBase 数据库
+DBMS - DataBase Management System(DBMS) 数据库管理系统
+SQL - Structured Query Language 操作数据库编程语言
+DDL - Data Definition Language 数据库定义语言
+DML - Data Manipulation Language 数据库操作语言
+DQL - Data Query Language 数据库查询语言
+DCL - Data Control Language 数据库控制语言
 
