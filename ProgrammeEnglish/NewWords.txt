@@ -62,8 +62,8 @@
 62. recursively [rɪ'kəsɪvlɪ] 递归地 --> (摘自Java Properties學習, recursively, are then checked)
 63. distinct [dɪˈstɪŋkt] 不同的 -->  (摘自Java Properties學習， including distinct keys in the default property list)
 64. obsolete [ˌɑːbsəˈliːt] 过时的 -->   (摘自Java Dictionary學習，This class is obsolete)
-
-
+65. preferred means of 首先方式 -->  (摘自Java JDBC學習， the preferred means of connecting to a data source.) 
+66.  explicitly [ɪkˈsplɪsətli] 明確地 --> (摘自Java JDBC學習，those loaded explicitly using the same class loader) 
 
 
 
