@@ -15,4 +15,7 @@ DDL - Data Definition Language 数据库定义语言
 DML - Data Manipulation Language 数据库操作语言
 DQL - Data Query Language 数据库查询语言
 DCL - Data Control Language 数据库控制语言
+LIFO - last-in-first-out 后进先出
+JDBC - Java Database Connectivity 
+api - Application Programming Intereface
 
