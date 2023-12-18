@@ -64,6 +64,5 @@
           <artifactId>org.eclipse.jdt.annotation</artifactId>
           <version>2.2.800</version>
       </dependency>
-
   </dependencies>
 </project>
