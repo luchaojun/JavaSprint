@@ -43,10 +43,34 @@ public class ReflectionTest {
 
         //获取该父类所有的属性包括私有属性
         Class<?> dogSuper = dog.getClass().getSuperclass();
-        for (Field field : dogSuper.getDeclaredFields()){
-            System.out.println(field.getName());
+//        for (Field field : dogSuper.getDeclaredFields()){
+//            System.out.println(field.getName());
+//        }
+
+
+        //判断是否为某各类的实例
+        Animal animal1 = new Animal();
+        Dog dog1 = new Dog();
+//        System.out.println(dogSuper.isInstance(animal));
+//        System.out.println(dogSuper.isInstance(dog1));
+
+        //获取包名
+//        System.out.println(dog1.getClass().getPackage().getName());
+
+        //获取接口类
+        Class<?>[] interfaces = dog1.getClass().getInterfaces();
+        for (Class i : interfaces){
+            System.out.println(i.getName());
         }
     }
+}
+
+interface Test1{
+
+}
+
+interface Test2{
+
 }
 
 class AnimalObj{
@@ -69,7 +93,7 @@ class Animal extends AnimalObj{
     }
 }
 
-class Dog extends Animal{
+class Dog extends Animal implements Test1, Test2{
     private String dogPrivate;
     public String dogPublic;
     public void testC(){
