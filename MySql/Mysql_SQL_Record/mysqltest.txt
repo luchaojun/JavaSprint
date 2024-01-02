@@ -1,0 +1,23 @@
+DDL語句:
+	創建表:
+		create table user(
+			id int primary key comment "用戶編號",
+			username varchar(20) comment "用戶名",
+			name varchar(10) comment "姓名"
+			age int comment "年齡",
+			gender char(1) comment "性別"
+		) comment "用戶表"
+
+
+	改變表結構:
+		alter table user add username varchar(20) not null commit "用戶名字";
+		
+	修改字段類型, 約束， comment:
+		alter table user modify username varchar(10) unique comment "username set";
+		
+	修改字段名字,字段類型，約束，comment:
+		alter table user change username uname varchar(5) not null comment "uname set";
+		
+	
+		
+	
