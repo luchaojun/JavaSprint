@@ -24,32 +24,29 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `mysqltest` /*!40100 DEFAULT CHARACTER 
 USE `mysqltest`;
 
 --
--- Table structure for table `user`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `id` int NOT NULL COMMENT '用戶編號',
   `name` varchar(10) DEFAULT NULL COMMENT '姓名',
   `age` int DEFAULT NULL COMMENT '年齡',
   `gender` char(1) DEFAULT NULL COMMENT '性別',
-  `uname` varchar(5) NOT NULL COMMENT 'uname set',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`uname`),
-  UNIQUE KEY `username_2` (`uname`),
-  UNIQUE KEY `username_3` (`uname`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用戶表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'chaojun1',29,'m'),(2,'chaojun2',29,'f');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -61,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-02 17:02:23
+-- Dump completed on 2024-01-03 17:04:35
