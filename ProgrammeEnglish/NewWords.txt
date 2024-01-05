@@ -63,8 +63,11 @@
 63. distinct [dɪˈstɪŋkt] 不同的 -->  (摘自Java Properties學習， including distinct keys in the default property list)
 64. obsolete [ˌɑːbsəˈliːt] 过时的 -->   (摘自Java Dictionary學習，This class is obsolete)
 65. preferred means of 首先方式 -->  (摘自Java JDBC學習， the preferred means of connecting to a data source.) 
-66.  explicitly [ɪkˈsplɪsətli] 明確地 --> (摘自Java JDBC學習，those loaded explicitly using the same class loader) 
-
+66. explicitly [ɪkˈsplɪsətli] 明確地 --> (摘自Java JDBC學習，those loaded explicitly using the same class loader) 
+67. constraint [kənˈstreɪnt]  限制 -->  (摘自mysql學習，主外键约束) 
+68. descending [dɪˈsendɪŋ] 降序的 -->  (摘自mysql學習，DQL排序) 
+69. ascending [əˈsendɪŋ] 升序的 -->  (摘自mysql學習，DQL排序) 
+70. diagrams [ˈdaɪəˌgræmz] 示意图 -->  (摘自mysql學習，主外键流程图) 
 
 
 
