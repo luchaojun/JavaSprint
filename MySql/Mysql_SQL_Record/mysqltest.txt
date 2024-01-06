@@ -10,13 +10,36 @@ DDL語句:
 
 
 	改變表結構:
-		alter table user add username varchar(20) not null commit "用戶名字";
+		alter table user add username varchar(20) not null comment "用戶名字";
 		
 	修改字段類型, 約束， comment:
 		alter table user modify username varchar(10) unique comment "username set";
 		
 	修改字段名字,字段類型，約束，comment:
 		alter table user change username uname varchar(5) not null comment "uname set";
+		
+	刪除外鍵約束:
+		alter table tb_emp drop foreign key tb_emp_tb_dept_id_fk;
+		
+	增加外鍵約束:
+		alter table tb_emp add constraint tb_emp_fk_dept_id foreign key(dept_id) references tb_dept(id);
+		
+	刪除auto_increment:
+		alter table tb_emp modify id int;
+		
+內連接:
+	select a.name, b.name from tb_emp a, tb_dept b where a.dept_id=b.id;   隱式內連接
+	select a.name, b.name from tb_emp a join tb_dept b on a.dept_id=b.id;  顯示內連接
+	
+外連接:
+	select a.name, b.name from tb_emp a left join tb_dept b on a.dept_id=b.id;   左外連接
+	select a.name, b.name from tb_emp a right join tb_dept b on a.dept_id=b.id;   右外連接
+	
+索引:
+	create index NAME_TEST on tb_emp(name);   創建索引
+	drop index NAME_TEST on tb_emp;  刪除索引
+	show index from tb_emp;  顯示索引
+		
 		
 	
 		
