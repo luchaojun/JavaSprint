@@ -68,6 +68,7 @@
 68. descending [dɪˈsendɪŋ] 降序的 -->  (摘自mysql學習，DQL排序) 
 69. ascending [əˈsendɪŋ] 升序的 -->  (摘自mysql學習，DQL排序) 
 70. diagrams [ˈdaɪəˌgræmz] 示意图 -->  (摘自mysql學習，主外键流程图) 
+71. distinct /dɪˈstɪŋkt/ 不同的 -->  (摘自mysql學習，去除不同点) 
 
 
 
