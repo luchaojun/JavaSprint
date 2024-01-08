@@ -39,6 +39,12 @@ DDL語句:
 	create index NAME_TEST on tb_emp(name);   創建索引
 	drop index NAME_TEST on tb_emp;  刪除索引
 	show index from tb_emp;  顯示索引
+	
+創建表:
+	create table test(
+	    id int,
+	    constraint UNIQUEKEY id
+	);
 		
 		
 	
