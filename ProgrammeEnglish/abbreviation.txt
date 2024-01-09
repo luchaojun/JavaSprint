@@ -18,4 +18,5 @@ DCL - Data Control Language 数据库控制语言
 LIFO - last-in-first-out 后进先出
 JDBC - Java Database Connectivity 
 api - Application Programming Intereface
+ACID - 数据库事务的四大特性(Atomicity, Consistency, Isolation, Durability)
 
