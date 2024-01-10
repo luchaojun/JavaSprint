@@ -69,7 +69,10 @@
 69. ascending [əˈsendɪŋ] 升序的 -->  (摘自mysql學習，DQL排序) 
 70. diagrams [ˈdaɪəˌgræmz] 示意图 -->  (摘自mysql學習，主外键流程图) 
 71. distinct /dɪˈstɪŋkt/ 不同的 -->  (摘自mysql學習，去除不同点) 
-
+72. Atomicity  [ˌætəˈmɪsəti] 原子性       -->  (摘自mysql學習，数据库事务的四大特性) 
+73. Consistency [kənˈsɪstənsi] 一致性    -->  (摘自mysql學習，数据库事务的四大特性) 
+74. Isolation [ˌaɪsəˈleɪʃn] 隔离性          -->  (摘自mysql學習，数据库事务的四大特性) 
+75. Duralility [duˈæləti] 持久性          -->  (摘自mysql學習，数据库事务的四大特性) 
 
 
 
