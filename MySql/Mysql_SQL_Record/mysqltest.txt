@@ -45,6 +45,20 @@ DDL語句:
 	    id int,
 	    constraint UNIQUEKEY id
 	);
+	
+	
+查詢所有用戶:
+	select host, user from user;
+	
+查詢當前用戶:
+	select user() from user;
+	
+
+創建用戶:
+	create user 'qinchao'@'localhost' identified by '123'
+	
+修改用戶密碼:
+	alter user 'qinchao'@'localhost' identified by '123';
 		
 		
 	
