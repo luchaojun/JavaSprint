@@ -73,6 +73,6 @@
 73. Consistency [kənˈsɪstənsi] 一致性    -->  (摘自mysql學習，数据库事务的四大特性) 
 74. Isolation [ˌaɪsəˈleɪʃn] 隔离性          -->  (摘自mysql學習，数据库事务的四大特性) 
 75. Duralility [duˈæləti] 持久性          -->  (摘自mysql學習，数据库事务的四大特性) 
-
-
+76. delimiter /dɪ'lɪmɪtə/ 分隔符         --> (摘自mysql學習，procedure學習) 
+77. procedure /prəˈsiːdʒər/ 程序        --> (摘自mysql學習，procedure學習) 
 
