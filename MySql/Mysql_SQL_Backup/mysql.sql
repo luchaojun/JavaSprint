@@ -1,13 +1,14 @@
-drop procedure if exists test;
+drop function if exists test;
 
-create procedure test(in a int,inout x int)
+create function test(emp_id int)
+returns varchar(100)
+reads sql data
 begin
-	set x = a + x + 100;
+    declare name varchar(20);
+    select username into name from tb_emp where id=emp_id;
+    return name;
 end;
 
-set @total = 3;
-
-call test(2, @total);
-
-select @total from dual;
-
+select test(1);
+select test(2);
+select test(3);
