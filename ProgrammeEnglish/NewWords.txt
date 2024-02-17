@@ -76,5 +76,5 @@
 76. delimiter /dɪ'lɪmɪtə/ 分隔符         --> (摘自mysql學習，procedure學習) 
 77. procedure /prəˈsiːdʒər/ 程序        --> (摘自mysql學習，procedure學習) 
 78. priviledge /ˈprɪvəlɪdʒ/ 權限    -->  (摘自mysql學習，数据库grant學習) 
-
+79. collate [kəˈleɪt] 整理 -->   (摘自mysql學習，数据库prcedure學習) 
 
