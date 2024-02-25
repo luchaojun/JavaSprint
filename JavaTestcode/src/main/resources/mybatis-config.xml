@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <properties resource="database.properties"></properties>
+<!--    <typeAliases>-->
+<!--        <package name=""/>-->
+<!--    </typeAliases>-->
+    <settings>
+        <setting name="logImpl" value="LOG4j"/>
+    </settings>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/wistron/mybatis/dao/mapper/IStudentMapper.xml"></mapper>
+<!--         <package name="com.wistron.mybatis.dao"/>-->
+    </mappers>
+</configuration>

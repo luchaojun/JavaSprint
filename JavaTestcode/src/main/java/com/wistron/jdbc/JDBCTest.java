@@ -26,7 +26,7 @@ public class JDBCTest {
             Class.forName("com.mysql.cj.jdbc.Driver");
             //自己注冊驅動
 //            DriverManager.registerDriver(new Driver());
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysqltest", "chaojun", "1234567890");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysqltest", "root", "root");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from tb_emp");
             while (resultSet.next()){
@@ -36,6 +36,8 @@ public class JDBCTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
+        new StringBuffer();
+        new StringBuilder();
+        new String();
     }
 }
