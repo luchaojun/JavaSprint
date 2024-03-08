@@ -3,7 +3,37 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wistron.mybatis.dao.IStudentMapper">
-    <select id="queryStudent" resultType="com.wistron.mybatis.pojo.Student">
+    <cache></cache>
+    <resultMap id="student-mapping" type="Student">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="birth" column="birth" jdbcType="VARCHAR" typeHandler="ExampleTypeHandler"></result>
+        <result property="createAt" column="createAt" typeHandler="org.apache.ibatis.type.DateTypeHandler"></result>
+    </resultMap>
+    <select id="queryStudent" resultMap="student-mapping">
         select * from student
     </select>
+
+    <insert id="insertOneStudent" parameterType="Student">
+        <selectKey keyColumn="id" keyProperty="id"  resultType="java.lang.Integer" order="BEFORE">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into student(name,birth,createAt) values (#{name}, #{birth, typeHandler=ExampleTypeHandler}, #{createAt, typeHandler=org.apache.ibatis.type.DateTypeHandler})
+    </insert>
+
+    <select id="selectStudentById" parameterType="int" resultMap="student-mapping" useCache="true">
+        select * from student where id = #{xxx}
+    </select>
+
+    <update id="updateStudent" parameterType="Student" flushCache="false" >
+        update student set name=#{name}, birth=#{birth}, createAt=#{createAt, typeHandler=org.apache.ibatis.type.DateTypeHandler} where id=#{id}
+    </update>
+
+<!--    测试主键回填功能-->
+    <insert id="insertOneBySelectKey">
+        <selectKey order="BEFORE" keyColumn="id,name,birth" keyProperty="id,name,birth" resultType="Student">
+            select id,name,birth from student where id=22;
+        </selectKey>
+        insert into student(name,birth,createAt) values (#{name}, #{birth, typeHandler=ExampleTypeHandler},#{createAt, typeHandler=org.apache.ibatis.type.DateTypeHandler})
+    </insert>
 </mapper>

@@ -1,6 +1,7 @@
 package com.wistron.mybatis.dao;
 
 import com.wistron.mybatis.pojo.Student;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -12,4 +13,12 @@ import java.util.List;
  */
 public interface IStudentMapper {
     List<Student> queryStudent();
+
+    void insertOneStudent();
+
+    Student selectStudentById(@Param("xxx") int id);
+
+    void updateStudent(Student student);
+
+    void insertOneBySelectKey(Student student);
 }

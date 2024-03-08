@@ -3,10 +3,8 @@ package com.wistron.jdbc;
 import com.mysql.cj.jdbc.Driver;
 import org.junit.Test;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+
 
 /**
  * @Author：Chaojun_Lu
@@ -36,8 +34,28 @@ public class JDBCTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        new StringBuffer();
-        new StringBuilder();
-        new String();
+    }
+
+    //测试主键回填
+    @Test
+    public void testJDBCGenerateKey(){
+        try {
+            //調用此包名下的靜態代碼塊
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //自己注冊驅動
+//            DriverManager.registerDriver(new Driver());
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysqltest", "root", "root");
+            PreparedStatement ps = connection.prepareStatement("insert into student(name, birth, createAt) values (?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            ps.setString(1, "baobao");
+            ps.setString(2, new java.util.Date().getTime()+"");
+            ps.setTimestamp(3, new Timestamp(new java.util.Date().getTime()));
+            ps.executeUpdate();
+            ResultSet keys = ps.getGeneratedKeys();
+            keys.next();
+            System.out.println(keys.getInt(1));
+//            connection.commit();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

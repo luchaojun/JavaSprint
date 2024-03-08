@@ -1,6 +1,7 @@
 package com.wistron.mybatis.utils;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -16,6 +17,7 @@ import java.io.Reader;
  */
 public class MyBatisUtils {
     private static SqlSessionFactory factory = null;
+    private static SqlSession sqlSession = null;
     private static Logger mLoger;
     static{
         try {
@@ -27,8 +29,11 @@ public class MyBatisUtils {
     }
 
     public static SqlSession getSqlSession(){
-        SqlSession sqlSession = null;
-        if(factory != null){
+        return  factory.openSession();
+    }
+
+    public static SqlSession getSingleSqlSession(){
+        if(sqlSession == null){
             sqlSession = factory.openSession();
         }
         return sqlSession;
