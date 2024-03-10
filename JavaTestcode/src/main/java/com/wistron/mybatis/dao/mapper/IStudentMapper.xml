@@ -10,7 +10,17 @@
         <result property="birth" column="birth" jdbcType="VARCHAR" typeHandler="ExampleTypeHandler"></result>
         <result property="createAt" column="createAt" typeHandler="org.apache.ibatis.type.DateTypeHandler"></result>
     </resultMap>
-    <select id="queryStudent" resultMap="student-mapping">
+
+    <resultMap id="student-mapping2" type="Student">
+        <constructor>
+            <arg column="name" name="name" javaType="String"/>
+        </constructor>
+        <result property="id" column="id"/>
+        <result property="birth" column="birth" jdbcType="VARCHAR" typeHandler="ExampleTypeHandler"></result>
+        <result property="createAt" column="createAt" typeHandler="org.apache.ibatis.type.DateTypeHandler"></result>
+    </resultMap>
+
+    <select id="queryStudent" resultMap="student-mapping2">
         select * from student
     </select>
 

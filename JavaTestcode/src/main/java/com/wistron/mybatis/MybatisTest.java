@@ -94,6 +94,7 @@ public class MybatisTest {
 //        MyBatisUtils.closeSession(sqlSession2);
     }
 
+    //测试<selectKey>标签的使用
     @Test
     public void testInsertOneBySelectKey(){
         SqlSession sqlSession = MyBatisUtils.getSingleSqlSession();
@@ -106,6 +107,16 @@ public class MybatisTest {
         sqlSession.insert("com.wistron.mybatis.dao.IStudentMapper.insertOneBySelectKey", student);
         sqlSession.commit();
         mLog.info(student);
+        MyBatisUtils.closeSession(sqlSession);
+    }
+
+    @Test
+    //测试resultMap标签下面的constructor
+    public void testResultMapConstructor(){
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        IStudentMapper iStudentMapper = sqlSession.getMapper(IStudentMapper.class);
+        List<Student> students = iStudentMapper.queryStudent();
+        mLog.info(students);
         MyBatisUtils.closeSession(sqlSession);
     }
 }

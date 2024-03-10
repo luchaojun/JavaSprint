@@ -16,6 +16,17 @@ public class Student implements Serializable {
     private Date createAt;
 
     public Student(){}
+
+    public Student(int id, String name) {
+        System.out.println("Student(int id, String name)构造器被调用");
+        this.id = id;
+        this.name = name;
+    }
+
+    public Student(String name) {
+        this.name = name;
+    }
+
     public Student(int id, String name, Date birth, Date createAt) {
         this.id = id;
         this.name = name;
