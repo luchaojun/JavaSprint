@@ -13,7 +13,7 @@
 
     <resultMap id="student-mapping2" type="Student">
         <constructor>
-            <arg column="name" name="name" javaType="String"/>
+            <arg column="name" javaType="String"/>
         </constructor>
         <result property="id" column="id"/>
         <result property="birth" column="birth" jdbcType="VARCHAR" typeHandler="ExampleTypeHandler"></result>

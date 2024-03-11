@@ -16,6 +16,8 @@
     
     <typeAliases>
         <typeAlias alias="Student" type="com.wistron.mybatis.pojo.Student"></typeAlias>
+        <typeAlias alias="Employee" type="com.wistron.mybatis.pojo.Employee"></typeAlias>
+        <typeAlias alias="Dept" type="com.wistron.mybatis.pojo.Dept"></typeAlias>
         <typeAlias alias="ExampleTypeHandler" type="com.wistron.mybatis.ExampleTypeHandler"></typeAlias>
     </typeAliases>
 
@@ -40,6 +42,7 @@
     </environments>
     <mappers>
         <mapper resource="com/wistron/mybatis/dao/mapper/IStudentMapper.xml"></mapper>
+        <mapper resource="com/wistron/mybatis/dao/mapper/IEmployeeMapper.xml"></mapper>
 <!--         <package name="com.wistron.mybatis.dao"/>-->
     </mappers>
 </configuration>

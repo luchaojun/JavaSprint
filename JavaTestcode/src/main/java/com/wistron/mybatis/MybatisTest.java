@@ -1,6 +1,8 @@
 package com.wistron.mybatis;
 
+import com.wistron.mybatis.dao.IEmployeeMapper;
 import com.wistron.mybatis.dao.IStudentMapper;
+import com.wistron.mybatis.pojo.Employee;
 import com.wistron.mybatis.pojo.Student;
 import com.wistron.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.io.Resources;
@@ -117,6 +119,16 @@ public class MybatisTest {
         IStudentMapper iStudentMapper = sqlSession.getMapper(IStudentMapper.class);
         List<Student> students = iStudentMapper.queryStudent();
         mLog.info(students);
+        MyBatisUtils.closeSession(sqlSession);
+    }
+
+    @Test
+    //测试resultMap标签下面的constructor
+    public void testResultMapAssociation(){
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        IEmployeeMapper iEmployeeMapper = sqlSession.getMapper(IEmployeeMapper.class);
+        List<Employee> employees = iEmployeeMapper.queryAllEmployee();
+        mLog.info(employees);
         MyBatisUtils.closeSession(sqlSession);
     }
 }

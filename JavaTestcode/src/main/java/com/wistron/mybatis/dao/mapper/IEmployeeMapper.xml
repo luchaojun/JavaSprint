@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wistron.mybatis.dao.IEmployeeMapper">
+    <cache></cache>
+    <resultMap id="employee-map" type="Employee">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="name" property="name"/>
+        <result column="gender" property="gender"/>
+        <result column="image" property="image"/>
+        <result column="job" property="job"/>
+        <result column="entrydate" property="entrydate"/>
+        <result column="dept_id" property="dept_id"/>
+        <result column="create_time" property="create_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
+        <result column="update_time" property="update_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
+        <association property="dept" javaType="Dept">
+            <id column="dept_id" property="id"></id>
+            <result column="dept_name" property="name"></result>
+            <result column="dept_create_time" property="create_time"></result>
+            <result column="dept_update_time" property="update_time"></result>
+        </association>
+    </resultMap>
+    <select id="queryAllEmployee" resultMap="employee-map" useCache="true">
+        select e.id, e.username, e.password, e.name, e.gender, e.image, e.job, e.entrydate, e.dept_id, e.create_time, e.update_time, d.id dept_id, d.name dept_name, d.create_time dept_create_time , d.update_time dept_update_time from tb_emp e left outer join tb_dept d on e.dept_id=d.id
+    </select>
+</mapper>
