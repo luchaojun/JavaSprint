@@ -82,3 +82,4 @@
 82. threshold[ˈθreʃhoʊld]  阈  --> (摘自mybatis學習，log4j2日志学习) 
 83. neutral [ˈnuːtrəl] 中立的 --> (摘自mybatis學習，log4j2日志学习) 
 84. aliases [ˈeɪliəsɪz]  别名 --> (摘自mybatis學習，typealiases学习) 
+85. association [əˌsoʊsiˈeɪʃn] 关联  --> (摘自mybatis學習，resultmap学习) 
