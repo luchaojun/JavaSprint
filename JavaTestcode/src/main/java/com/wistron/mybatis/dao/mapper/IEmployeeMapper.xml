@@ -4,26 +4,84 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wistron.mybatis.dao.IEmployeeMapper">
     <cache></cache>
-    <resultMap id="employee-map" type="Employee">
-        <id column="id" property="id"/>
-        <result column="username" property="username"/>
-        <result column="password" property="password"/>
-        <result column="name" property="name"/>
-        <result column="gender" property="gender"/>
-        <result column="image" property="image"/>
-        <result column="job" property="job"/>
-        <result column="entrydate" property="entrydate"/>
-        <result column="dept_id" property="dept_id"/>
-        <result column="create_time" property="create_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
-        <result column="update_time" property="update_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
-        <association property="dept" javaType="Dept">
-            <id column="dept_id" property="id"></id>
-            <result column="dept_name" property="name"></result>
-            <result column="dept_create_time" property="create_time"></result>
-            <result column="dept_update_time" property="update_time"></result>
-        </association>
-    </resultMap>
-    <select id="queryAllEmployee" resultMap="employee-map" useCache="true">
-        select e.id, e.username, e.password, e.name, e.gender, e.image, e.job, e.entrydate, e.dept_id, e.create_time, e.update_time, d.id dept_id, d.name dept_name, d.create_time dept_create_time , d.update_time dept_update_time from tb_emp e left outer join tb_dept d on e.dept_id=d.id
-    </select>
+<!--    嵌套结果映射-->
+<!--    <resultMap id="employee-map" type="Employee">-->
+<!--        <id column="id" property="id"/>-->
+<!--        <result column="username" property="username"/>-->
+<!--        <result column="password" property="password"/>-->
+<!--        <result column="name" property="name"/>-->
+<!--        <result column="gender" property="gender"/>-->
+<!--        <result column="image" property="image"/>-->
+<!--        <result column="job" property="job"/>-->
+<!--        <result column="entrydate" property="entrydate"/>-->
+<!--        <result column="dept_id" property="dept_id"/>-->
+<!--        <result column="create_time" property="create_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>-->
+<!--        <result column="update_time" property="update_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>-->
+<!--        <association property="dept" javaType="Dept">-->
+<!--            <id column="dept_id" property="id"></id>-->
+<!--            <result column="dept_name" property="name"></result>-->
+<!--            <result column="dept_create_time" property="create_time"></result>-->
+<!--            <result column="dept_update_time" property="update_time"></result>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+
+<!--&lt;!&ndash;    通过association的resultMap属性将映射关系独立出来&ndash;&gt;-->
+<!--&lt;!&ndash;    <resultMap id="dept" type="Dept">&ndash;&gt;-->
+<!--&lt;!&ndash;        <id property="id" column="dept_id"></id>&ndash;&gt;-->
+<!--&lt;!&ndash;        <result property="name" column="dept_name"></result>&ndash;&gt;-->
+<!--&lt;!&ndash;        <result property="create_time" column="dept_create_time"></result>&ndash;&gt;-->
+<!--&lt;!&ndash;        <result property="update_time" column="dept_update_time"></result>&ndash;&gt;-->
+<!--&lt;!&ndash;    </resultMap>&ndash;&gt;-->
+
+<!--    <select id="queryAllEmployee" resultMap="employee-map" useCache="true">-->
+<!--        select e.id, e.username, e.password, e.name, e.gender, e.image, e.job, e.entrydate, e.dept_id, e.create_time, e.update_time, d.id dept_id, d.name dept_name, d.create_time dept_create_time , d.update_time dept_update_time from tb_emp e left outer join tb_dept d on e.dept_id=d.id-->
+<!--    </select>-->
+
+<!--    嵌套查询-->
+<!--        <resultMap id="employee-map" type="Employee">-->
+<!--            <id column="id" property="id"/>-->
+<!--            <result column="username" property="username"/>-->
+<!--            <result column="password" property="password"/>-->
+<!--            <result column="name" property="name"/>-->
+<!--            <result column="gender" property="gender"/>-->
+<!--            <result column="image" property="image"/>-->
+<!--            <result column="job" property="job"/>-->
+<!--            <result column="entrydate" property="entrydate"/>-->
+<!--            <result column="dept_id" property="dept_id"/>-->
+<!--            <result column="create_time" property="create_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>-->
+<!--            <result column="update_time" property="update_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>-->
+<!--            <association property="dept" javaType="Dept" column="{deptId=dept_id}" select="selectDept"></association>-->
+<!--        </resultMap>-->
+
+<!--    <select id="selectDept" parameterType="Map" resultType="Dept">-->
+<!--        select id, name, create_time, update_time from tb_dept where id=#{deptId}-->
+<!--    </select>-->
+
+<!--    <select id="queryAllEmployee" resultMap="employee-map" useCache="true">-->
+<!--        select id, username, password, name, gender, image, job, entrydate, dept_id, create_time, update_time from tb_emp-->
+<!--    </select>-->
+
+<!--    关联多个结果集-->
+            <resultMap id="employee-map" type="Employee">
+                <id column="id" property="id"/>
+                <result column="username" property="username"/>
+                <result column="password" property="password"/>
+                <result column="name" property="name"/>
+                <result column="gender" property="gender"/>
+                <result column="image" property="image"/>
+                <result column="job" property="job"/>
+                <result column="entrydate" property="entrydate"/>
+                <result column="dept_id" property="dept_id"/>
+                <result column="create_time" property="create_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
+                <result column="update_time" property="update_time" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
+                <association property="dept" resultSet="dept" column="dept_id" foreignColumn="deptment_id">
+                    <id property="id" column="deptment_id"></id>
+                    <result property="name" column="dept_name"></result>
+                    <result property="create_time" column="dept_create_time"></result>
+                    <result property="update_time" column="dept_update_time"></result>
+                </association>
+            </resultMap>
+        <select id="queryEmployeeById" parameterType="Integer" useCache="true" resultSets="employee,dept" resultMap="employee-map">
+            {call p_get_employee_dept(#{id})}
+        </select>
 </mapper>

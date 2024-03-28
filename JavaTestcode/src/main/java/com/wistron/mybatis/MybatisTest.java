@@ -131,4 +131,12 @@ public class MybatisTest {
         mLog.info(employees);
         MyBatisUtils.closeSession(sqlSession);
     }
+
+    @Test
+    public void testAssociation2Select(){
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        IEmployeeMapper iEmployeeMapper = sqlSession.getMapper(IEmployeeMapper.class);
+        Employee employee = iEmployeeMapper.queryEmployeeById(1);
+        System.out.println(employee);
+    }
 }
